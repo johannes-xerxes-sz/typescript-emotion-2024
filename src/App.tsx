@@ -1,55 +1,41 @@
-import { css } from "@emotion/react";
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  // Navigate,
+} from "react-router-dom";
+import { Bounce, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+
+// Components
+
+// Pages
+import Sample from "./pages/SamplePage";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
-  const [count, setCount] = useState(0);
-  //test
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <div>
-        <div
-          css={css({
-            margin: 10,
-            padding: 10,
-            backgroundColor: "blue",
-          })}
-        >
-          This is an example of <code>`css`</code> using an object.
-        </div>
-        <div
-          css={css`
-            margin: 10px;
-            padding: 10px;
-            background-color: #eee;
-          `}
-        >
-          This is an example of <code>`css`</code> using a tagged template
-          literal.
-        </div>
-      </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
+      <Router>
+        <Routes>
+          <Route path="/sample" element={<Sample />} />
+          <Route path="/" element={<LandingPage />} />
+        </Routes>
+      </Router>
     </>
   );
 }
