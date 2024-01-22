@@ -3,6 +3,7 @@ import { useState } from "react";
 import reactLogo from "./../assets/react.svg";
 import viteLogo from "/vite.svg";
 import { toast } from "react-toastify";
+import Button from '@mui/material/Button';
 
 function LandingPage() {
   const [count, setCount] = useState(0);
@@ -24,7 +25,7 @@ function LandingPage() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={buttonClicked}>count is {count}</button>
+        <Button onClick={buttonClicked}>count is {count}</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
@@ -37,7 +38,7 @@ function LandingPage() {
           css={css({
             margin: 10,
             padding: 10,
-            backgroundColor: "lightblue",
+            backgroundColor: "hotpink",
           })}
         >
           This is an example of <code>`css`</code> using an object.
@@ -46,7 +47,7 @@ function LandingPage() {
           css={css`
             margin: 10px;
             padding: 10px;
-            background-color: #eee;
+            background-color: cyan;
           `}
         >
           This is an example of <code>`css`</code> using a tagged template
