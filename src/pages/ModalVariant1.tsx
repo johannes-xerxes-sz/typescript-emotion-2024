@@ -1,11 +1,18 @@
 import ModalBody1 from "../components/ModalBody1";
 import ModalHeader1 from "../components/ModalHeader1";
-import { Modal, Box, } from "@mui/material";
+import { Modal, Box } from "@mui/material";
 
 function ModalVariant1() {
   return (
     <>
-      <Modal open={true}>
+      <Modal
+        open={true}
+        sx={{
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
         <Box
           sx={{
             display: "flex",

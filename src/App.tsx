@@ -22,6 +22,7 @@ import Sample from "./pages/SamplePage";
 import LandingPage from "./pages/LandingPage";
 import Sandbox from "./pages/ModalVariant2";
 import DataGrid from "./pages/DataGrid";
+import ModalVariant1 from "./pages/ModalVariant1";
 
 function App() {
   return (

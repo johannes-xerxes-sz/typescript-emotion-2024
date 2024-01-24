@@ -4,7 +4,14 @@ import { Modal, Box } from "@mui/material";
 
 function ModalVariant2() {
   return (
-    <Modal open={true}>
+    <Modal
+      open={true}
+      sx={{
+        justifyContent: "center",
+        alignItems: "center",
+        display: "flex",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -17,14 +24,15 @@ function ModalVariant2() {
           borderRadius: "20px",
           border: "var(--none, 1px) solid var(--Neutral-300, #DEE2E6)",
           background: "#FFF",
-          boxShadow: "0px 0px 1px 0px rgba(33, 37, 41, 0.08), 0px 2px 2px 0px rgba(33, 37, 41, 0.06);"
+          boxShadow:
+            "0px 0px 1px 0px rgba(33, 37, 41, 0.08), 0px 2px 2px 0px rgba(33, 37, 41, 0.06);",
         }}
       >
         <ModalHeader2 />
         <ModalBody2 />
       </Box>
     </Modal>
-      )
+  );
 }
 
-export default ModalVariant2
+export default ModalVariant2;

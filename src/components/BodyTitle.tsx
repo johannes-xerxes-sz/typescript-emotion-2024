@@ -6,7 +6,9 @@ function SampleComponent() {
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", gap: "24px" }}>
-        <ArrowBackIcon sx={{ fontSize: '24px', fontWeight: "bold", color: "#F29D38" }} />
+        <ArrowBackIcon
+          sx={{ fontSize: "24px", fontWeight: "bold", color: "#F29D38" }}
+        />
         <h2>Reports</h2>
       </Box>
     </>

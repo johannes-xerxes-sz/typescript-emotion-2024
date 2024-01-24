@@ -5,18 +5,20 @@ import exporting from "highcharts/modules/exporting";
 
 funnel(Highcharts);
 exporting(Highcharts);
+// TODO Add the stuffs on the HTML for exporting and funnel
 
 const AnalyticsFunnel = () => {
   const options = {
     chart: {
       type: "funnel",
-      backgroundColor: "transparent", // Set chart background color
-      spacingBottom: 30, // Add bottom spacing
+      backgroundColor: "transparent",
+      spacingBottom: 30, 
     },
     title: {
-      text: "Funnel Chart Example",
+      text: "Your Analytics",
+      align: "left",
       style: {
-        color: "#333", // Set title text color
+        color: "#333", 
       },
     },
     exporting: {
@@ -38,8 +40,8 @@ const AnalyticsFunnel = () => {
     plotOptions: {
       series: {
         dataLabels: {
-          enabled: true,
-          format: "<b>{point.name}</b> ({point.y:.1f}%)",
+          enabled: false,
+          format: "<b>{point.name}</b> ({point.y:f})",
           color: "black",
           softConnector: true,
         },
@@ -47,23 +49,25 @@ const AnalyticsFunnel = () => {
         neckHeight: "25%",
         width: "80%",
         height: "90%",
+        colors: ["#8096EF", "#607CEB", "#4D63BC", "#394A8C"],
+        showInLegend: true
+
       },
     },
     series: [
       {
         name: "Funnel",
         data: [
-          ["Step 1", 100],
-          ["Step 2", 80],
-          ["Step 3", 60],
-          ["Step 4", 40],
-          ["Step 5", 20],
+          ["Applied", 500],
+          ["Other", 350],
+          ["Job Offer", 200],
+          ["Hired", 80],
         ],
       },
     ],
     credits: {
-        enabled: false
-      },
+      enabled: false,
+    },
   };
 
   return <HighchartsReact highcharts={Highcharts} options={options} />;

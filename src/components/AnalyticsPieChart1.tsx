@@ -4,14 +4,14 @@ import exporting from "highcharts/modules/exporting";
 
 exporting(Highcharts);
 
-function AnalyticsSemiCircleDonut() {
+function AnalyticsPieChart1() {
   const options = {
     chart: {
       type: "pie",
-      backgroundColor: "transparent", // Set chart background color
+      backgroundColor: "transparent",
     },
     title: {
-      text: "All Active Status Workflow",
+      text: "Lorem Ipsum",
       align: "left",
     },
     exporting: {
@@ -48,22 +48,13 @@ function AnalyticsSemiCircleDonut() {
     },
     plotOptions: {
       pie: {
-        dataLabels: {
-          enabled: false,
-          distance: -50,
-          style: {
-            fontWeight: "bold",
-            color: "white",
-          },
-        },
-        startAngle: -130,
-        endAngle: 130,
-        center: ["50%", "75%"],
-        size: "110%",
         allowPointSelect: true,
         cursor: "pointer",
-        borderRadius: 20,
-        showInLegend: true
+        dataLabels: {
+          enabled: true,
+          format: "<b>{point.name}</b><br>{point.percentage}%",
+          distance: 20,
+        },
       },
     },
     legend: {
@@ -79,9 +70,6 @@ function AnalyticsSemiCircleDonut() {
         animation: {
           duration: 2000,
         },
-        type: "pie",
-        name: "Browser share",
-        innerSize: "80%",
         colorByPoint: true,
         data: [
           {
@@ -112,4 +100,4 @@ function AnalyticsSemiCircleDonut() {
   return <HighchartsReact highcharts={Highcharts} options={options} />;
 }
 
-export default AnalyticsSemiCircleDonut;
+export default AnalyticsPieChart1;

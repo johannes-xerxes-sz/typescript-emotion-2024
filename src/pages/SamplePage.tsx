@@ -1,9 +1,9 @@
-import AnalyticsFunnel from "../components/AnalyticsFunnel";
+import MUIChips from "../components/MUIChips";
 
 function Sample() {
   return (
     <>
-    <AnalyticsFunnel />
+    <MUIChips />
     </>
   );
 }

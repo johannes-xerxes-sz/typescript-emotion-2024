@@ -4,7 +4,9 @@ import { Box } from "@mui/material";
 function DataGrid() {
   return (
     <>
-      <Box>
+      <Box sx={{
+        backgound: "hotpink"
+      }}>
         <DataGridMUI />
       </Box>
     </>

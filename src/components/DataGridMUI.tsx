@@ -14,7 +14,7 @@ function DataGridMUI() {
 
   const columns = [
     { field: "id", headerName: "ID" },
-    { field: "name", headerName: "Name" },
+    { field: "name", headerName: "Name", width: 150 },
     { field: "age", headerName: "Age" },
     { field: "birthdate", headerName: "Birthday" },
     {
@@ -54,10 +54,10 @@ function DataGridMUI() {
   ];
 
   return (
-    <Box sx={{height: 300, width: 500}}>
+    <Box sx={{ height: 300, width: 500 }}>
       <DataGrid
         // autoHeight
-        disableRowSelectionOnClick
+        disableRowSelectionOnClick //? Remove if there's no settings
         rows={rows}
         columns={columns}
         checkboxSelection

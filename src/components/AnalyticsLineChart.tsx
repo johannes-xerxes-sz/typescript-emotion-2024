@@ -4,14 +4,14 @@ import exporting from "highcharts/modules/exporting";
 
 exporting(Highcharts);
 
-function AnalyticsSemiCircleDonut() {
+function AnalyticsLineChart() {
   const options = {
     chart: {
-      type: "pie",
-      backgroundColor: "transparent", // Set chart background color
+      type: "line",
+      backgroundColor: "transparent",
     },
     title: {
-      text: "All Active Status Workflow",
+      text: "Lorem Ipsum",
       align: "left",
     },
     exporting: {
@@ -30,45 +30,27 @@ function AnalyticsSemiCircleDonut() {
         },
       },
     },
+    yAxis: {
+        title: {
+            text: null
+        }
+    },
     xAxis: {
-      categories: [
-        "Sourced",
-        "Initial Interview",
-        "Validation Interview",
-        "Client Interview",
-        "Hired",
-        "Active File",
-        "Rejected",
-      ],
-      title: {
-        text: null,
-      },
-      gridLineWidth: 1,
-      lineWidth: 0,
+        accessibility: {
+            rangeDescription: 'Range: 2010 to 2020'
+        }
     },
     plotOptions: {
-      pie: {
-        dataLabels: {
-          enabled: false,
-          distance: -50,
-          style: {
-            fontWeight: "bold",
-            color: "white",
-          },
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+
         },
-        startAngle: -130,
-        endAngle: 130,
-        center: ["50%", "75%"],
-        size: "110%",
-        allowPointSelect: true,
-        cursor: "pointer",
-        borderRadius: 20,
-        showInLegend: true
-      },
     },
     legend: {
       align: "center",
-      verticalAlign: "bottom",
+      verticalAlign: "top",
       layout: "horizontal",
     },
     credits: {
@@ -79,30 +61,55 @@ function AnalyticsSemiCircleDonut() {
         animation: {
           duration: 2000,
         },
-        type: "pie",
-        name: "Browser share",
-        innerSize: "80%",
-        colorByPoint: true,
+        name: "Data 1",
         data: [
           {
-            name: "Pie One",
+            name: "Data One",
             y: 21.3,
           },
           {
-            name: "Pie Two",
+            name: "Data Two",
             y: 18.7,
           },
           {
-            name: "Pie Three",
+            name: "Data Three",
             y: 20.2,
           },
           {
-            name: "Pie Four",
+            name: "Data Four",
             y: 14.2,
           },
           {
-            name: "Pie Five",
+            name: "Data Five",
             y: 25.6,
+          },
+        ],
+      },
+      {
+        animation: {
+          duration: 2000,
+        },
+        name: "Data 2",
+        data: [
+          {
+            name: "Data One",
+            y: 15.7,
+          },
+          {
+            name: "Data Two",
+            y: 12.3,
+          },
+          {
+            name: "Data Three",
+            y: 14.8,
+          },
+          {
+            name: "Data Four",
+            y: 11.2,
+          },
+          {
+            name: "Data Five",
+            y: 18.6,
           },
         ],
       },
@@ -112,4 +119,4 @@ function AnalyticsSemiCircleDonut() {
   return <HighchartsReact highcharts={Highcharts} options={options} />;
 }
 
-export default AnalyticsSemiCircleDonut;
+export default AnalyticsLineChart;

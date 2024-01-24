@@ -4,11 +4,11 @@ import exporting from "highcharts/modules/exporting";
 
 exporting(Highcharts);
 
-function AnalyticsSemiCircleDonut() {
+function AnalyticsBasicBar() {
   const options = {
     chart: {
-      type: "pie",
-      backgroundColor: "transparent", // Set chart background color
+      type: "bar",
+      backgroundColor: "transparent",
     },
     title: {
       text: "All Active Status Workflow",
@@ -47,23 +47,12 @@ function AnalyticsSemiCircleDonut() {
       lineWidth: 0,
     },
     plotOptions: {
-      pie: {
+      bar: {
+        borderRadius: "50%",
         dataLabels: {
-          enabled: false,
-          distance: -50,
-          style: {
-            fontWeight: "bold",
-            color: "white",
-          },
+          enabled: true,
         },
-        startAngle: -130,
-        endAngle: 130,
-        center: ["50%", "75%"],
-        size: "110%",
-        allowPointSelect: true,
-        cursor: "pointer",
-        borderRadius: 20,
-        showInLegend: true
+        groupPadding: 0.1,
       },
     },
     legend: {
@@ -79,32 +68,8 @@ function AnalyticsSemiCircleDonut() {
         animation: {
           duration: 2000,
         },
-        type: "pie",
-        name: "Browser share",
-        innerSize: "80%",
-        colorByPoint: true,
-        data: [
-          {
-            name: "Pie One",
-            y: 21.3,
-          },
-          {
-            name: "Pie Two",
-            y: 18.7,
-          },
-          {
-            name: "Pie Three",
-            y: 20.2,
-          },
-          {
-            name: "Pie Four",
-            y: 14.2,
-          },
-          {
-            name: "Pie Five",
-            y: 25.6,
-          },
-        ],
+        name: "Total Applicants",
+        data: [4520, 3500, 2500, 1800, 1200, 800, 500],
       },
     ],
   };
@@ -112,4 +77,4 @@ function AnalyticsSemiCircleDonut() {
   return <HighchartsReact highcharts={Highcharts} options={options} />;
 }
 
-export default AnalyticsSemiCircleDonut;
+export default AnalyticsBasicBar;
