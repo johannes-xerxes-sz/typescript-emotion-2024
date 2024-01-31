@@ -1,9 +1,9 @@
-import MUIChips from "../components/MUIChips";
+import Pagination from "../components/Pagination";
 
 function Sample() {
   return (
     <>
-    <MUIChips />
+    <Pagination />
     </>
   );
 }
